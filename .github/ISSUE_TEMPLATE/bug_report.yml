@@ -1,0 +1,104 @@
+name: 🐛 Bug Report
+description: Report a bug or unexpected behavior
+title: "[Bug]: "
+labels: ["bug"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill out the information below to help us resolve the issue.
+        
+        ⚠️ **Important**: Please redact any real secrets or sensitive data from your configuration files.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear description of what the bug is
+      placeholder: Describe what happened vs what you expected
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Minimal steps to reproduce the behavior
+      placeholder: |
+        1. Run command: `./mcp-scan -c config.json`
+        2. See error message: ...
+        3. Expected behavior: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: config
+    attributes:
+      label: MCP Configuration (redacted)
+      description: Sample configuration that triggers the issue
+      placeholder: |
+        {
+          "mcpServers": {
+            "example": {
+              "command": "...",
+              "env": {
+                "API_KEY": "[REDACTED]"
+              }
+            }
+          }
+        }
+      render: json
+    validations:
+      required: false
+
+  - type: textarea
+    id: output
+    attributes:
+      label: Actual Output
+      description: Complete output or error message
+      placeholder: Paste the full output here
+      render: shell
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: MCP Scan Version
+      description: Output of `./mcp-scan version`
+      placeholder: v1.0.0
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating System
+      description: OS and version
+      placeholder: "macOS 14.0, Ubuntu 22.04, Windows 11, etc."
+    validations:
+      required: true
+
+  - type: input
+    id: go-version
+    attributes:
+      label: Go Version
+      description: Output of `go version` (if building from source)
+      placeholder: go version go1.21.0 darwin/amd64
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please confirm you have done the following
+      options:
+        - label: I have searched existing issues for duplicates
+          required: true
+        - label: I have redacted any sensitive information from configs
+          required: true
+        - label: I can reproduce this issue consistently
+          required: true

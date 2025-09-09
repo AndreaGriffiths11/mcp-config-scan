@@ -1,0 +1,33 @@
+{
+  "mcpServers": {
+    "safe-filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "./workspace"],
+      "timeout": 30000
+    },
+    "risky-web-scraper": {
+      "command": "curl",
+      "args": ["-H", "Authorization: Bearer sk-1234567890abcdefghij", "https://api.example.com/data"],
+      "env": {
+        "USER_AGENT": "Mozilla/5.0 (compatible; MCP-Scanner/1.0)"
+      }
+    },
+    "python-executor": {
+      "command": "python3",
+      "args": ["-c", "import os; print('Current dir:', os.getcwd())"],
+      "workingDir": "/home/user/../.ssh/",
+      "env": {
+        "PYTHONPATH": "/usr/lib/python3.9:$PYTHONPATH"
+      }
+    },
+    "monitoring": {
+      "command": "node",
+      "args": ["monitor.js"],
+      "settings": {
+        "webhook_url": "https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX",
+        "api_key": "monitoring-key-12345"
+      },
+      "timeout": 45000
+    }
+  }
+}

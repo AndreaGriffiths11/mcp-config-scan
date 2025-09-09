@@ -1,0 +1,357 @@
+{
+  "$schema": "https://demotime.show/demo-time.schema.json",
+  "title": "a.griffiths-deck-ja",
+  "description": "Imported from PowerPoint",
+  "demos": [
+    {
+      "title": "Slide2",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide2.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide1",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide1.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide3",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide3.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide4",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide4.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide6",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide6.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide5",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide5.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide7",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide7.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide8",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide8.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide9",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide9.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide10",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide10.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide11",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide11.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide12",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide12.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide13",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide13.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide14",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide14.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide15",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide15.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide16",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide16.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide17",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide17.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide18",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide18.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide20",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide20.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide19",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide19.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide21",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide21.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide22",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide22.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide23",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide23.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide24",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide24.png"
+        }
+      ]
+    },
+    {
+      "title": "Slide25",
+      "description": "",
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/a.griffiths-deck-ja/images/Slide25.png"
+        }
+      ]
+    }
+  ]
+}

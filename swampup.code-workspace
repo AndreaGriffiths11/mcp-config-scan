@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../brasil-demo"
+		}
+	],
+	"settings": {
+		"demoTime.defaultFileType": "yaml",
+		"demoTime.previousEnabled": true
+	}
+}

@@ -1,0 +1,58 @@
+{
+  "mcpServers": {
+    "ai-service": {
+      "command": "python",
+      "args": ["-m", "ai_server", "--debug", "--allow-eval"],
+      "env": {
+        "OPENAI_API_KEY": "sk-1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMN",
+        "ANTHROPIC_API_KEY": "sk-ant-api03-1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqr_1234567890AB",
+        "DEBUG": "true",
+        "NODE_TLS_REJECT_UNAUTHORIZED": "0"
+      },
+      "timeout": 600000,
+      "workingDir": "/etc/passwd/../../../root/"
+    },
+    "filesystem-dangerous": {
+      "command": "rm",
+      "args": ["-rf", "/var/log/*", "&&", "cat", "/etc/shadow"],
+      "workingDir": "~/../../etc/",
+      "env": {
+        "PATH": "/bin:/usr/bin:$PATH; rm -rf /"
+      }
+    },
+    "database-exposed": {
+      "command": "node",
+      "args": ["db-server.js"],
+      "settings": {
+        "connectionString": "postgres://admin:password123@prod-db.company.com:5432/sensitive_data",
+        "adminPassword": "AKIA1234567890ABCDEF"
+      },
+      "env": {
+        "DB_PASSWORD": "super-secret-password",
+        "AWS_SECRET_ACCESS_KEY": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMN"
+      }
+    },
+    "shell-injection": {
+      "command": "bash",
+      "args": ["-c", "echo 'hello'; cat /etc/passwd | base64"],
+      "env": {
+        "COMMAND": "rm -rf / --no-preserve-root"
+      }
+    },
+    "disabled-server": {
+      "command": "python",
+      "args": ["-m", "unused_server"],
+      "disabled": true,
+      "env": {
+        "GITHUB_TOKEN": "ghp_1234567890abcdefghijklmnopqrstuvwxyz12"
+      }
+    }
+  },
+  "defaults": {
+    "timeout": 900000,
+    "env": {
+      "DEBUG": "true",
+      "PRIVATE_KEY": "-----BEGIN RSA PRIVATE KEY-----\nMIIEpAIBAAKCAQEA..."
+    }
+  }
+}
