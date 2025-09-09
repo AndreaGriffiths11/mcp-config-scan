@@ -91,9 +91,9 @@ Scans config files in:
 
 ```
 ╔═══════════════════════════════════════════════════════════════╗
-║                         MCP SCAN v1.0                        ║
-║              Security Scanner for MCP Configurations         ║
-║                     SwampUP 2025 Edition                     ║
+║                         MCP SCAN v1.0                         ║
+║              Security Scanner for MCP Configurations          ║
+║                     SwampUP 2025 Edition                      ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 ✅ demos/secure-config.json - No security issues found
