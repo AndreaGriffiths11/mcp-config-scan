@@ -96,6 +96,8 @@ Got it — here’s the full slide list with all URLs included:
 * [MCP & Its Critical Vulnerabilities (Strobes)](https://strobes.co/research/mcp-critical-vulnerabilities) – Breakdown of attack surfaces and CVEs
 * [Dagger/container-use](https://dagger.io/docs/container-use) – Secure multi-agent dev environments
 * [OWASP ASI (Feb 2025)](https://owasp.org/www-project-agentic-security-initiative/) – Threats & mitigations for autonomous AI
+* [Prioritizing Dependabot Alerts Using Production Context](https://docs.github.com/en/code-security/securing-your-organization/understanding-your-organizations-exposure-to-vulnerabilities/prioritizing-dependabot-alerts-using-production-context) – GitHub guide for contextual vulnerability prioritization
+* [DevSecOps in the AI Era: JFrog Powers Agentic Remediation](https://www.businesswire.com/news/home/20250909861213/en/DevSecOps-in-the-AI-Era-JFrog-Powers-Agentic-Remediation-with-Self-Healing-Software-Supply-Chain) – JFrog's approach to self-healing software supply chain
 
 ### Vulnerability & Risk Catalogs
 
