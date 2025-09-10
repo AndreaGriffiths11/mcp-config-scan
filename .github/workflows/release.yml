@@ -1,0 +1,121 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Set up Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: 1.23.x
+        cache: true
+
+    - name: Run tests
+      run: go test -v ./...
+
+    - name: Build binaries
+      run: |
+        # Build for multiple platforms
+        GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o mcp-scan-linux-amd64 .
+        GOOS=linux GOARCH=arm64 go build -ldflags="-s -w" -o mcp-scan-linux-arm64 .
+        GOOS=darwin GOARCH=amd64 go build -ldflags="-s -w" -o mcp-scan-darwin-amd64 .
+        GOOS=darwin GOARCH=arm64 go build -ldflags="-s -w" -o mcp-scan-darwin-arm64 .
+        GOOS=windows GOARCH=amd64 go build -ldflags="-s -w" -o mcp-scan-windows-amd64.exe .
+        GOOS=windows GOARCH=arm64 go build -ldflags="-s -w" -o mcp-scan-windows-arm64.exe .
+
+    - name: Create checksums
+      run: |
+        sha256sum mcp-scan-* > checksums.txt
+
+    - name: Generate release notes
+      run: |
+        echo "# MCP Scan ${GITHUB_REF#refs/tags/}" > RELEASE_NOTES.md
+        echo "" >> RELEASE_NOTES.md
+        echo "## Changes" >> RELEASE_NOTES.md
+        git log --pretty=format:"- %s" $(git describe --tags --abbrev=0 HEAD^)..HEAD >> RELEASE_NOTES.md || echo "- Initial release" >> RELEASE_NOTES.md
+        echo "" >> RELEASE_NOTES.md
+        echo "## Installation" >> RELEASE_NOTES.md
+        echo "" >> RELEASE_NOTES.md
+        echo "### Linux/macOS:" >> RELEASE_NOTES.md
+        echo '```bash' >> RELEASE_NOTES.md
+        echo "curl -L https://github.com/AndreaGriffiths11/mcp-config-scan/releases/download/${GITHUB_REF#refs/tags/}/mcp-scan-\$(uname -s | tr '[:upper:]' '[:lower:]')-\$(uname -m | sed 's/x86_64/amd64/') -o mcp-scan" >> RELEASE_NOTES.md
+        echo "chmod +x mcp-scan" >> RELEASE_NOTES.md
+        echo '```' >> RELEASE_NOTES.md
+        echo "" >> RELEASE_NOTES.md
+        echo "### Windows:" >> RELEASE_NOTES.md
+        echo "Download the appropriate .exe file for your architecture." >> RELEASE_NOTES.md
+        echo "" >> RELEASE_NOTES.md
+        echo "## Verification" >> RELEASE_NOTES.md
+        echo "Verify downloads using the checksums.txt file:" >> RELEASE_NOTES.md
+        echo '```bash' >> RELEASE_NOTES.md
+        echo "sha256sum -c checksums.txt" >> RELEASE_NOTES.md
+        echo '```' >> RELEASE_NOTES.md
+
+    - name: Create release
+      uses: softprops/action-gh-release@v1
+      with:
+        body_path: RELEASE_NOTES.md
+        files: |
+          mcp-scan-linux-amd64
+          mcp-scan-linux-arm64
+          mcp-scan-darwin-amd64
+          mcp-scan-darwin-arm64
+          mcp-scan-windows-amd64.exe
+          mcp-scan-windows-arm64.exe
+          checksums.txt
+        draft: false
+        prerelease: false
+        generate_release_notes: false
+
+  docker:
+    name: Build and Push Docker Image
+    runs-on: ubuntu-latest
+    needs: release
+    
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Login to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Extract metadata
+      id: meta
+      uses: docker/metadata-action@v5
+      with:
+        images: mcpscan/mcp-scan
+        tags: |
+          type=ref,event=branch
+          type=ref,event=pr
+          type=semver,pattern={{version}}
+          type=semver,pattern={{major}}.{{minor}}
+
+    - name: Build and push
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        platforms: linux/amd64,linux/arm64
+        push: true
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max

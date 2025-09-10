@@ -1,0 +1,26 @@
+mcpServers:
+  ai-service:
+    command: python
+    args:
+      - "-m"
+      - "ai_server"
+    env:
+      OPENAI_API_KEY: "sk-proj-1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJ"
+      HUGGING_FACE_TOKEN: "hf_abcdefghijklmnopqrstuvwxyzABCDEF1234567890"
+      DEBUG: "true"
+    timeout: 30000
+    workingDir: "/tmp/safe"
+
+  database-service:
+    command: node
+    args: ["db-server.js"]
+    settings:
+      connectionString: "postgres://user:password@localhost:5432/db"
+    env:
+      MISTRAL_API_KEY: "1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p"
+      COHERE_API_KEY: "Co1234567890abcdefghijklmnopqrstuvwxyz123456"
+
+defaults:
+  timeout: 60000
+  env:
+    DEBUG: "false"

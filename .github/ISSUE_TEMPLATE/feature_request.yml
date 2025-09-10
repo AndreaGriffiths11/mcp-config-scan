@@ -1,0 +1,87 @@
+name: 💡 Feature Request
+description: Suggest a new feature or enhancement
+title: "[Feature]: "
+labels: ["enhancement"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new feature! Please provide as much detail as possible to help us understand your needs.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: What problem would this feature solve?
+      placeholder: "I'm frustrated when... It's difficult to... Users need..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe what you'd like to happen
+      placeholder: "I would like MCP Scan to..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Feature Category
+      description: What type of enhancement is this?
+      options:
+        - New security check/detection
+        - Output format improvement
+        - CLI interface enhancement
+        - Performance optimization
+        - Integration/automation
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples
+      description: Show what the feature would look like in action
+      placeholder: |
+        Command: `./mcp-scan --new-flag`
+        Output: 
+        ```
+        New feature output here
+        ```
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Other solutions you've thought about
+      placeholder: "I also considered... Another approach could be..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Any other context about the feature request
+      placeholder: "This would be useful for... Related to..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing issues for similar requests
+          required: true
+        - label: This feature aligns with the project's security focus
+          required: true

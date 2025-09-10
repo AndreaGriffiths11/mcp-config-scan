@@ -1,0 +1,33 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/safe/workspace"],
+      "timeout": 30000
+    },
+    "github": {
+      "command": "node",
+      "args": ["github-mcp-server.js"],
+      "env": {
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+      },
+      "timeout": 15000
+    },
+    "database": {
+      "command": "python",
+      "args": ["-m", "db_server", "--read-only"],
+      "settings": {
+        "host": "localhost",
+        "port": 5432,
+        "database": "myapp"
+      },
+      "timeout": 10000
+    }
+  },
+  "defaults": {
+    "timeout": 30000,
+    "env": {
+      "LOG_LEVEL": "info"
+    }
+  }
+}

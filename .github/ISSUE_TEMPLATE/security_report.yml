@@ -1,0 +1,87 @@
+name: 🔒 Security Issue
+description: Report a security vulnerability (please use private reporting for sensitive issues)
+title: "[Security]: "
+labels: ["security"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ⚠️ Security Reporting Guidelines
+        
+        - For **critical vulnerabilities**, please use [GitHub's private vulnerability reporting](https://github.com/AndreaGriffiths11/mcp-config-scan/security/advisories/new)
+        - For **false positives** or **missed detections**, you can use this public form
+        - **Never** include real secrets or credentials in public issues
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Issue Type
+      description: What type of security issue is this?
+      options:
+        - False positive (incorrectly flagged as vulnerable)
+        - False negative (missed detection of actual vulnerability)
+        - New vulnerability pattern to detect
+        - Security improvement suggestion
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the security issue
+      placeholder: "MCP Scan incorrectly flags... / MCP Scan fails to detect..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: example
+    attributes:
+      label: Example Configuration
+      description: Sample config demonstrating the issue (use fake/example values only!)
+      placeholder: |
+        {
+          "mcpServers": {
+            "example": {
+              "env": {
+                "API_KEY": "fake_key_example_not_real"
+              }
+            }
+          }
+        }
+      render: json
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should MCP Scan do in this case?
+      placeholder: "Should detect... / Should not flag... / Should suggest..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Security Impact
+      description: Why is this important for security?
+      placeholder: "This could lead to... / Users might miss... / Attackers could..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Security Checklist
+      options:
+        - label: I have NOT included any real secrets or sensitive data
+          required: true
+        - label: This issue relates to MCP configuration security
+          required: true
+        - label: I considered using private vulnerability reporting for sensitive issues
+          required: true

@@ -1,0 +1,40 @@
+{
+  "mcpServers": {
+    "local-dev": {
+      "command": "node",
+      "args": ["dev-server.js", "--port", "3000"],
+      "env": {
+        "NODE_ENV": "development",
+        "DEBUG": "true",
+        "LOG_LEVEL": "debug"
+      },
+      "workingDir": "./src",
+      "timeout": 120000
+    },
+    "test-database": {
+      "command": "python",
+      "args": ["-m", "test_db_server"],
+      "env": {
+        "DATABASE_URL": "mongodb://testuser:testpass@localhost:27017/testdb"
+      },
+      "settings": {
+        "ssl": false,
+        "debug_queries": true
+      }
+    },
+    "mock-api": {
+      "command": "npm",
+      "args": ["run", "mock-server"],
+      "env": {
+        "MOCK_DATA_PATH": "./test-data/",
+        "API_KEY": "dev-key-not-for-prod"
+      }
+    }
+  },
+  "defaults": {
+    "timeout": 60000,
+    "env": {
+      "ENVIRONMENT": "development"
+    }
+  }
+}
